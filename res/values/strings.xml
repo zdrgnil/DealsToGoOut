@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DealsToGoOut</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Enter a Message1</string>
+    <string name="button_send">Go</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    
+    <!-- Buttons -->
+    <string name="login_button">Login</string>
+    <string name="shoplist_button">Shop List</string>
+    <string name="Map_button">Map</string>
+    <string name="Search_button">Search</string>
+        
+    
+    <!-- Drop List -->
+    <string-array name="sorting">
+        <item>Price</item>
+        <item>Regular Price</item>
+        <item>Store Location</item>
+    </string-array>
+
+    <string-array name="asodc">
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+    
+</resources>

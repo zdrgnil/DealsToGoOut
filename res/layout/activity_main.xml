@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/ButtonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/login_button" 
+        android:onClick="chLogin"/>
+    
+    
+    
+    <Button
+        android:id="@+id/ButtonShopList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ButtonLogin"
+        android:text="@string/shoplist_button" />
+
+    <Button
+        android:id="@+id/ButtonMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ButtonLogin"
+        android:text="@string/Map_button" />
+
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/ButtonMap"
+        android:layout_below="@+id/ButtonShopList"
+        android:hint="@string/edit_message" >
+    </EditText>
+    
+    <Button
+        android:id="@+id/ButtonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/edit_message"
+        android:layout_below="@+id/ButtonShopList"
+        android:text="@string/Search_button" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/ButtonMap"
+        android:layout_alignParentLeft="true"
+        android:entries="@array/sorting"/>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/spinner1"
+		android:layout_below="@+id/ButtonSearch"
+        android:entries="@array/asodc"/>
+    	    
+    <ListView
+        android:id="@+id/sale_list"
+        android:layout_below="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    </ListView>
+</RelativeLayout>
+<!--
+
+<EditText android:id="@+id/edit_message"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/edit_message">    
+</EditText>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/button_send" 
+    android:onClick="sendMessage" />
+
+<TextView 
+    android:id="@+id/text_message"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="@string/hello_world" />-->
