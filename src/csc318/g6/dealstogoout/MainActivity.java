@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        onCreateListView();
+        //onCreateListView();
         // Create the text view
         //TextView textView = (TextView)findViewById(R.id.text_message);
         //textView.setText("This and that");

@@ -10,24 +10,24 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    
+
     <!-- Buttons -->
     <string name="login_button">Login</string>
     <string name="shoplist_button">Shop List</string>
     <string name="Map_button">Map</string>
     <string name="Search_button">Search</string>
-        
-    
+
     <!-- Drop List -->
     <string-array name="sorting">
         <item>Price</item>
         <item>Regular Price</item>
         <item>Store Location</item>
     </string-array>
-
     <string-array name="asodc">
         <item>Ascending</item>
         <item>Descending</item>
     </string-array>
-    
+
+    <string name="title_activity_home_page">HomePage</string>
+
 </resources>
