@@ -6,7 +6,8 @@
         <ImageView
             android:id="@+id/img"
             android:layout_width="50dp"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:contentDescription="@string/item_img_desc"/>
  
         <TableLayout 
             android:layout_width="wrap_content"
@@ -32,6 +33,5 @@
             </TableRow>
 
 		</TableLayout>
- 
-</TableRow>
+	</TableRow>
 </TableLayout>

@@ -41,6 +41,8 @@ public class CustomList extends ArrayAdapter<String> {
         cPriceTag.setText("   Now $"+cPrice[position]+" !!!");        
         oPriceTag.setText("Reg: $"+oPrice[position]);        
         imageView.setImageResource(imageId[position]);
+        
+        
         return rowView;
     }
 }

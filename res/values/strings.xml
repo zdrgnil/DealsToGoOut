@@ -6,17 +6,23 @@
     <string name="edit_message">Enter a Message1</string>
     <string name="button_send">Go</string>
     <string name="title_activity_display_message">My Message</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="random_text">random text</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
+    
+    <!-- Image content description -->
+    <string name="logo_desc">This is an icon of our logo</string>
+    <string name="item_img_desc">This is an icon for the item</string>
+    
     <!-- Buttons -->
     <string name="login_button">Login</string>
     <string name="shoplist_button">Shop List</string>
     <string name="Map_button">Map</string>
     <string name="Search_button">Search</string>
-
+    <string name="home_button">Home</string>
+    <string name="cart_button">Cart</string>
+        
     <!-- Drop List -->
     <string-array name="sorting">
         <item>Price</item>

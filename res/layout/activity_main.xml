@@ -15,6 +15,7 @@
 		android:layout_height="50dp"
         android:layout_alignParentLeft="true"
 		android:src="@raw/tvcat"
+		android:contentDescription="@string/logo_desc"
 		/>
     
     <EditText
@@ -48,15 +49,38 @@
 		android:layout_below="@+id/edit_message"
         android:entries="@array/asodc"/>
     
+    
     <ListView
         android:id="@+id/sale_list"
         android:layout_below="@+id/spinner1"
+        android:layout_above="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
-        
-        
     </ListView>
     
+   <Button 
+       android:id="@+id/home"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:text="@string/home_button" />
+   
+   <Button 
+       android:id="@+id/map"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"       
+       android:layout_toRightOf="@+id/home"
+       android:text="@string/Map_button" />
+
+   	<Button 
+       android:id="@+id/cart"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"             
+       android:layout_toRightOf="@+id/map"
+       android:text="@string/cart_button"  />
+   
 </RelativeLayout>
 <!--
 
