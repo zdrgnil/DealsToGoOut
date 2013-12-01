@@ -3,7 +3,7 @@
 
     <string name="app_name">DealsToGoOut</string>
     <string name="action_settings">Settings</string>
-    <string name="edit_message">search item here</string>
+    <string name="edit_message">search items here</string>
     <string name="button_send">Go</string>
     <string name="title_activity_display_message">My Message</string>
     <string name="random_text">random text</string>
@@ -11,6 +11,11 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="my_shopping_list">My Shopping List</string>
+    <string name="map_view_text">Map View</string>
+    <string name="location_A">A : I\'m Here</string>
+    <string name="location_B">B : Metro</string>
+    <string name="location_C">C : Food Basics</string>
+    <string name="location_D">D : Shopper</string>
 
     <!-- Image content description -->
     <string name="logo_desc">This is an icon of our logo</string>
@@ -31,6 +36,7 @@
     <string name="sort_by">Sort By</string>
     <string name="sort_in">Sort In</string>
     <string name="display_category">Display Category</string>
+    <string name="stroe_type_text">Store Type</string>
 
     <string-array name="sorting">
         <item>Price</item>
@@ -47,6 +53,10 @@
         <item>Meat</item>
         <item>Vegetable</item>
         <item>Fruit</item>
+    </string-array>
+    <string-array name="store_type">
+        <item>Supermarket</item>
+        <item>Grocery</item>
     </string-array>
 
     <string name="title_activity_home_page">HomePage</string>

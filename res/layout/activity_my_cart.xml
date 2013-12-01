@@ -83,6 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/map"
+        android:onClick="goHome"
         android:text="@string/home_button" />
 
     <Button
@@ -91,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/sep_line"
+        android:onClick="chMap"
         android:text="@string/Map_button" />
 
     <View

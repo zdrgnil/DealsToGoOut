@@ -4,6 +4,7 @@ import csc318.g6.dealstogoout.util.SystemUiHider;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,7 +26,7 @@ public class MyCart extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_cart);
 		onCreateListView();
-		TextView textView = (TextView)findViewById(R.id.total_text);
+		TextView textView = (TextView) findViewById(R.id.total_text);
 		textView.setText("Total: 23.95$");
 	}
 
@@ -106,5 +107,28 @@ public class MyCart extends Activity {
 			}
 		});/**/
 		custom.show();
+	}
+
+	public void chMap(View view) {
+		Intent intent = new Intent(this, MapActivity.class);
+		startActivity(intent);
+	}
+
+	public void chLogin(View view) {
+		// EditText editText = (EditText) findViewById(R.id.edit_message);
+		// String message = editText.getText().toString();
+		Intent intent = new Intent(this, LoginActivity.class);
+		// intent.putExtra(SEARCH_TEXT, message);
+		startActivity(intent);
+	}
+
+	public void chCart(View view) {
+		Intent intent = new Intent(this, MyCart.class);
+		startActivity(intent);
+	}
+
+	public void goHome(View view) {
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 	}
 }

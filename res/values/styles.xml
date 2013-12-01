@@ -23,6 +23,7 @@
         <item name="android:windowBackground">@null</item>
         <item name="buttonBarStyle">@style/ButtonBar</item>
         <item name="buttonBarButtonStyle">@style/ButtonBarButton</item>
+        <item name="android:textColor">@color/black_overlay</item>
     </style>
 
     <style name="ButtonBar">

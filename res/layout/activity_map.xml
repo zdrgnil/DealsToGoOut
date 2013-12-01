@@ -40,18 +40,18 @@
         android:layout_width="150dp"
         android:layout_height="37dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/logImg"
-        android:entries="@array/sorting"
-        android:prompt="@string/sort_by" />
+        android:layout_below="@+id/edit_message"
+        android:entries="@array/store_type"
+        android:prompt="@string/stroe_type_text" />
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="150dp"
         android:layout_height="37dp"
-        android:layout_below="@+id/logImg"
+        android:layout_below="@+id/edit_message"
         android:layout_toRightOf="@+id/spinner1"
-        android:entries="@array/asodc"
-        android:prompt="@string/sort_in" />
+        android:entries="@array/display_categories"
+        android:prompt="@string/display_category" />
 
     <TextView
         android:id="@+id/map_view_text"
@@ -59,17 +59,61 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner1"
         android:layout_centerHorizontal="true"
-        android:text="@string/random_text"
+        android:text="@string/map_view_text"
+        android:textColor="@color/white"
         android:textSize="25sp" />
 
     <ImageView
         android:id="@+id/map_view"
         android:layout_width="200dp"
-        android:layout_height="300dp"
+        android:layout_height="270dp"
+        android:layout_alignLeft="@+id/spinner1"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/map_view_text"
         android:contentDescription="@string/logo_desc"
-        android:src="@raw/mapview" />
+        android:src="@raw/mapview2" />
+
+    <TextView
+        android:id="@+id/map_locationA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/map_view"
+        android:text="@string/location_A"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/map_locationC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/map_locationA"
+        android:text="@string/location_B"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/sep_line5"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/map_locationB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_view"
+        android:layout_toRightOf="@+id/sep_line5"
+        android:text="@string/location_C"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/map_locationD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_locationB"
+        android:layout_toRightOf="@+id/sep_line5"
+        android:text="@string/location_D"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/home"
@@ -102,6 +146,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/sep_line"
+        android:onClick="chCart"
         android:text="@string/cart_button" />
 
     <Button

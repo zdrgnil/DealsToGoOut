@@ -136,6 +136,11 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 
+	public void chMap(View view) {
+		Intent intent = new Intent(this, MapActivity.class);
+		startActivity(intent);
+	}
+
 	public void chLogin(View view) {
 		// EditText editText = (EditText) findViewById(R.id.edit_message);
 		// String message = editText.getText().toString();
