@@ -9,57 +9,73 @@
     android:paddingTop="16dp"
     tools:context=".MainActivity" >
 
-    <ImageView
-        android:id="@+id/logImg"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/Search_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:contentDescription="@string/logo_desc"
-        android:src="@raw/ic_launcher" />
-
-    <Button
-        android:id="@+id/ButtonSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:onClick="search"
-        android:text="@string/Search_button" />
-
-    <EditText
-        android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/ButtonSearch"
-        android:layout_toRightOf="@+id/logImg"
-        android:hint="@string/edit_message" >
-    </EditText>
+        android:text="@string/my_shopping_list"
+        android:textSize="25sp" />
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="37dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/edit_message"
+        android:layout_below="@+id/Search_text"
         android:entries="@array/sorting"
         android:prompt="@string/sort_by" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="37dp"
-        android:layout_below="@+id/edit_message"
+        android:layout_below="@+id/Search_text"
         android:layout_toRightOf="@+id/spinner1"
         android:entries="@array/asodc"
         android:prompt="@string/sort_in" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/Search_text"
+        android:layout_toRightOf="@+id/spinner2"
+        android:entries="@array/display_categories"
+        android:prompt="@string/display_category" />
 
     <ListView
         android:id="@+id/sale_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/home"
+        android:layout_above="@+id/sep_line3"
         android:layout_below="@+id/spinner1"
         android:paddingLeft="2dp" >
     </ListView>
+
+    <View
+        android:id="@+id/sep_line3"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/total_text"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/total_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sep_line4"
+        android:text="@string/my_shopping_list"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/sep_line4"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/home"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/darker_gray" />
 
     <Button
         android:id="@+id/home"
@@ -91,7 +107,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/sep_line"
-        android:onClick="chCart"
         android:text="@string/cart_button" />
 
     <Button

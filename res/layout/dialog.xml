@@ -2,43 +2,139 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    
-<EditText
-        android:id="@+id/fname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="3dp" >
+
+    <View
+        android:id="@+id/sep_line2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="@string/random_text" >
- 
-    </EditText>
- 
-    <EditText
-        android:id="@+id/lname"
+        android:background="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sep_line2"
+        android:layout_margin="3dp"
+        android:contentDescription="@string/item_img_desc"
+        android:src="@raw/tvcat" />
+
+    <TextView
+        android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fname"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="@string/random_text" />
- 
-    <Button
-        android:id="@+id/savebtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/canbtn"
-        android:layout_alignBottom="@+id/canbtn"
-        android:layout_alignRight="@+id/lname"
+        android:layout_toRightOf="@+id/item_img"
         android:text="@string/random_text" />
- 
-    <Button
-        android:id="@+id/canbtn"
+
+    <TextView
+        android:id="@+id/item_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lname"
-        android:layout_below="@+id/lname"
+        android:layout_below="@+id/item_name"
+        android:layout_toRightOf="@+id/item_img"
         android:text="@string/random_text" />
-   
+
+    <TextView
+        android:id="@+id/item_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_price"
+        android:layout_toRightOf="@+id/item_img"
+        android:text="@string/random_text" />
+
+    <TextView
+        android:id="@+id/sale_ends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_save"
+        android:layout_toRightOf="@+id/item_img"
+        android:text="@string/random_text" />
+
+    <View
+        android:id="@+id/sep_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/sale_ends"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/detail_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sep_line"
+        android:text="@string/detail_text" />
+
+    <TextView
+        android:id="@+id/manufacture_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_text"
+        android:text="@string/random_text" />
+
+    <TextView
+        android:id="@+id/product_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manufacture_text"
+        android:text="@string/random_text" />
+
+    <TextView
+        android:id="@+id/brand_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_text"
+        android:text="@string/random_text" />
+
+    <TextView
+        android:id="@+id/sold_at_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/brand_text"
+        android:text="@string/random_text" />
+
+    <TextView
+        android:id="@+id/map_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sold_at_text"
+        android:text="@string/map_text" />
+
+    <ImageView
+        android:id="@+id/item_location_map"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/map_text"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/item_img_desc"
+        android:src="@raw/dmap" />
+
+    <!--
+    <Button
+        android:id="@+id/more_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/item_location_map"        
+        android:text="@string/more_text" />
+    -->
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_location_map"
+        android:layout_toLeftOf="@+id/add_to_cart_button"
+        android:text="@string/close_button" />
+
+    <Button
+        android:id="@+id/add_to_cart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/item_location_map"
+        android:text="@string/add_to_cart_button" />
+
 </RelativeLayout>

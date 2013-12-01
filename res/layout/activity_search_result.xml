@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/black_overlay"
     android:orientation="horizontal"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -34,12 +35,20 @@
         android:hint="@string/edit_message" >
     </EditText>
 
+    <TextView
+        android:id="@+id/Search_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logImg"        
+        android:text="@string/random_text"
+        android:textSize="25sp" />
+
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="150dp"
         android:layout_height="37dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/edit_message"
+        android:layout_below="@+id/Search_text"
         android:entries="@array/sorting"
         android:prompt="@string/sort_by" />
 
@@ -47,7 +56,7 @@
         android:id="@+id/spinner2"
         android:layout_width="150dp"
         android:layout_height="37dp"
-        android:layout_below="@+id/edit_message"
+        android:layout_below="@+id/Search_text"
         android:layout_toRightOf="@+id/spinner1"
         android:entries="@array/asodc"
         android:prompt="@string/sort_in" />
@@ -67,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/map"
+        android:onClick="goHome"
         android:text="@string/home_button" />
 
     <Button
@@ -91,7 +101,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/sep_line"
-        android:onClick="chCart"
         android:text="@string/cart_button" />
 
     <Button

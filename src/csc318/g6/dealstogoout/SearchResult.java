@@ -1,34 +1,46 @@
 package csc318.g6.dealstogoout;
 
-import android.os.Bundle;
+import csc318.g6.dealstogoout.util.SystemUiHider;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.view.Menu;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
-//import android.content.Intent;
-//import android.widget.EditText;
-//import android.widget.TextView;
 import android.widget.ListView;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+/**
+ * An example full-screen activity that shows and hides the system UI (i.e.
+ * status bar and navigation/system bar) with user interaction.
+ * 
+ * @see SystemUiHider
+ */
+public class SearchResult extends Activity {
 	public final static String SEARCH_TEXT = "csc318.g6.dealstogoout.SearchText";
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_search_result);
+
+		Intent intent = getIntent();
+		int num = 10 + (int) (Math.random() * 70);
+		String message = "\"" + intent.getStringExtra(MainActivity.SEARCH_TEXT);
+		message += "\" (" + num + " results)";
+
+		TextView searchTextField = (TextView) findViewById(R.id.Search_text);
+		searchTextField.setText(message);
+
 		onCreateListView();
 	}
 
 	public void onCreateListView() {
 		ListView list;
-		CustomList adapter = new CustomList(MainActivity.this, TPTData.items,
+		CustomList adapter = new CustomList(SearchResult.this, TPTData.items,
 				TPTData.imageId, TPTData.cPrice, TPTData.oPrice,
 				TPTData.location);
 		list = (ListView) findViewById(R.id.sale_list);
@@ -37,8 +49,9 @@ public class MainActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// Toast.makeText(MainActivity.this, "You Clicked at "
-				// +TPTData.items[+ position], Toast.LENGTH_SHORT).show();
+				// Toast.makeText(SearchResult.this,
+				// "You Clicked at " + TPTData.items[+position],
+				// Toast.LENGTH_SHORT).show();
 				createDialog(position);
 			}
 		});
@@ -46,7 +59,7 @@ public class MainActivity extends Activity {
 
 	public void createDialog(int position) {
 
-		final Dialog custom = new Dialog(MainActivity.this);
+		final Dialog custom = new Dialog(SearchResult.this);
 		custom.setContentView(R.layout.dialog);
 		custom.setTitle("Product Detail: " + TPTData.items[+position]);
 
@@ -88,10 +101,6 @@ public class MainActivity extends Activity {
 				.findViewById(R.id.sold_at_text);
 		itemLocationField.setText("Sold at: " + TPTData.location[position % 3]);
 
-		ImageView mapImageField = (ImageView) custom
-				.findViewById(R.id.item_location_map);
-		mapImageField.setImageResource(TPTData.mapId[position % 3]);
-
 		// Button savebtn = (Button)
 		// custom.findViewById(R.id.add_to_cart_button);
 		Button canbtn = (Button) custom.findViewById(R.id.cancel_button);
@@ -105,25 +114,9 @@ public class MainActivity extends Activity {
 		custom.show();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	// called when user click send button
-	public void sendMessage(View view) {
-		// do something
-		/*
-		 * Intent intent = new Intent(this, DisplayMessageActivity.class);
-		 * EditText editText =(EditText)findViewById(R.id.edit_message);
-		 * 
-		 * String message = editText.getText().toString();
-		 * intent.putExtra(EXTRA_MESSAGE, message);
-		 * 
-		 * startActivity(intent);
-		 */
+	public void goHome(View view) {
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 	}
 
 	public void search(View view) {
@@ -136,16 +129,4 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 
-	public void chLogin(View view) {
-		// EditText editText = (EditText) findViewById(R.id.edit_message);
-		// String message = editText.getText().toString();
-		Intent intent = new Intent(this, LoginActivity.class);
-		// intent.putExtra(SEARCH_TEXT, message);
-		startActivity(intent);
-	}
-
-	public void chCart(View view) {
-		Intent intent = new Intent(this, MyCart.class);
-		startActivity(intent);
-	}
 }

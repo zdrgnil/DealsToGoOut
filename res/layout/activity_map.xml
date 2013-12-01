@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/black_overlay"
     android:orientation="horizontal"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -39,7 +40,7 @@
         android:layout_width="150dp"
         android:layout_height="37dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/edit_message"
+        android:layout_below="@+id/logImg"
         android:entries="@array/sorting"
         android:prompt="@string/sort_by" />
 
@@ -47,19 +48,28 @@
         android:id="@+id/spinner2"
         android:layout_width="150dp"
         android:layout_height="37dp"
-        android:layout_below="@+id/edit_message"
+        android:layout_below="@+id/logImg"
         android:layout_toRightOf="@+id/spinner1"
         android:entries="@array/asodc"
         android:prompt="@string/sort_in" />
 
-    <ListView
-        android:id="@+id/sale_list"
+    <TextView
+        android:id="@+id/map_view_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/home"
         android:layout_below="@+id/spinner1"
-        android:paddingLeft="2dp" >
-    </ListView>
+        android:layout_centerHorizontal="true"
+        android:text="@string/random_text"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/map_view"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/map_view_text"
+        android:contentDescription="@string/logo_desc"
+        android:src="@raw/mapview" />
 
     <Button
         android:id="@+id/home"
@@ -67,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/map"
+        android:onClick="goHome"
         android:text="@string/home_button" />
 
     <Button
@@ -91,7 +102,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/sep_line"
-        android:onClick="chCart"
         android:text="@string/cart_button" />
 
     <Button

@@ -23,7 +23,7 @@ public class DisplayMessageActivity extends Activity {
 	    // Get the message from the intent
 	    Intent intent = getIntent();
 	    String tMessage = "The text you enter is:";
-	    String message = tMessage + intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+	    String message = tMessage + intent.getStringExtra(MainActivity.SEARCH_TEXT);
 
 	    // Create the text view
 	    TextView textView = new TextView(this);
