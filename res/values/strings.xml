@@ -16,7 +16,7 @@
     <string name="location_B">B : Metro</string>
     <string name="location_C">C : Food Basics</string>
     <string name="location_D">D : Shopper</string>
-
+    <string name="quantity_hint">quantity</string>
     <!-- Image content description -->
     <string name="logo_desc">This is an icon of our logo</string>
     <string name="item_img_desc">This is an icon for the item</string>
@@ -50,9 +50,16 @@
     </string-array>
     <string-array name="display_categories">
         <item>All</item>
-        <item>Meat</item>
-        <item>Vegetable</item>
-        <item>Fruit</item>
+        <item>Dairy</item>
+        <item>Snacks</item>
+        <item>Produce </item>
+        <item>Drinks</item>
+        <item>Instant Meals</item>
+        <item>Bread</item>
+        <item>Vegetarian/Vegan</item>
+        <item>Desserts</item>
+        <item>Condiments</item>
+        <item>Other</item>
     </string-array>
     <string-array name="store_type">
         <item>Supermarket</item>

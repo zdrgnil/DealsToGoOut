@@ -2,7 +2,7 @@ package csc318.g6.dealstogoout;
 
 public class TPTData {
 	public static final String[] items = { "Carrot", "Bean", "Cabbage",
-			"Onion", "Spinach", "Tomato", "Apple", "Banana", "Bread",
+			"Onion", "Spinach", "Tomato", "Apple", "Banana", "Brown Bean",
 			"Pineapple" };
 
 	public static Double[] cPrice = { 0.99, 0.88, 0.77, 0.65, 0.55, 0.45, 0.33,
@@ -18,4 +18,44 @@ public class TPTData {
 			R.raw.s_pineapple };
 	public static Integer[] mapId = { R.raw.yong23, R.raw.wellesley238,
 			R.raw.bloor23 };
+
+	public static Integer[] selected = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+	public static Integer[] quantity = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+
+	public static int findID(String itemName) {
+		for (int i = 0; i < items.length; i++) {
+			if (items[i].equals(itemName))
+				return i;
+		}
+		return 0;
+	}
+
+	public static String getTotal() {
+		double sum = 0;
+		for (int i = 0; i < items.length; i++) {
+			if (selected[i] != 0)
+				sum = sum + (quantity[i] * cPrice[i]);
+		}
+		String sTotal = sum + "";
+		if (sTotal.length() - sTotal.indexOf('.') > 2)
+			sTotal = sTotal.substring(0, sTotal.indexOf('.') + 3);
+		return sTotal;
+	}
+
+	public static String getSaved() {
+		double cSum = 0;
+		double oSum = 0;
+		for (int i = 0; i < items.length; i++) {
+			if (selected[i] != 0) {
+				cSum = cSum + (quantity[i] * cPrice[i]);
+				oSum = oSum + (quantity[i] * oPrice[i]);
+			}
+		}
+		String sTotal = (oSum - cSum) + "";
+		if (sTotal.length() - sTotal.indexOf('.') > 2)
+			sTotal = sTotal.substring(0, sTotal.indexOf('.') + 3);
+		return sTotal;
+	}
+
 }

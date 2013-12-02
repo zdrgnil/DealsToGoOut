@@ -59,7 +59,7 @@ public class SearchResult extends Activity {
 	}
 
 	public void createDialog(int position) {
-
+		final int pos = position;
 		final Dialog custom = new Dialog(SearchResult.this);
 		custom.setContentView(R.layout.dialog);
 		custom.setTitle("Product Detail: " + TPTData.items[+position]);
@@ -102,8 +102,21 @@ public class SearchResult extends Activity {
 				.findViewById(R.id.sold_at_text);
 		itemLocationField.setText("Sold at: " + TPTData.location[position % 3]);
 
-		// Button savebtn = (Button)
-		// custom.findViewById(R.id.add_to_cart_button);
+		Button savebtn = (Button) custom.findViewById(R.id.add_to_cart_button);
+		final EditText editText;
+		editText = (EditText) custom.findViewById(R.id.quantity_ed);
+		savebtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String str = editText.getText().toString();
+				int qty = 1;
+				if (str.length() != 0)
+					qty = Integer.parseInt(str);
+				TPTData.quantity[pos] = qty;
+				TPTData.selected[pos] = 1;
+				custom.dismiss();
+			}
+		});
 		Button canbtn = (Button) custom.findViewById(R.id.cancel_button);
 		canbtn.setOnClickListener(new View.OnClickListener() {
 			@Override

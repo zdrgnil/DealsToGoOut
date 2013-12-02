@@ -80,6 +80,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/map_view"
         android:text="@string/location_A"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
@@ -89,6 +90,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/map_locationA"
         android:text="@string/location_B"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <View
@@ -104,6 +106,7 @@
         android:layout_below="@+id/map_view"
         android:layout_toRightOf="@+id/sep_line5"
         android:text="@string/location_C"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <TextView
@@ -113,6 +116,7 @@
         android:layout_below="@+id/map_locationB"
         android:layout_toRightOf="@+id/sep_line5"
         android:text="@string/location_D"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
     <Button

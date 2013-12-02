@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
 	}
 
 	public void createDialog(int position) {
+		final int pos = position;
 
 		final Dialog custom = new Dialog(MainActivity.this);
 		custom.setContentView(R.layout.dialog);
@@ -92,8 +93,21 @@ public class MainActivity extends Activity {
 				.findViewById(R.id.item_location_map);
 		mapImageField.setImageResource(TPTData.mapId[position % 3]);
 
-		// Button savebtn = (Button)
-		// custom.findViewById(R.id.add_to_cart_button);
+		Button savebtn = (Button) custom.findViewById(R.id.add_to_cart_button);
+		final EditText editText;
+		editText = (EditText) custom.findViewById(R.id.quantity_ed);
+		savebtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String str = editText.getText().toString();
+				int qty = 1;
+				if (str.length() != 0)
+					qty = Integer.parseInt(str);
+				TPTData.quantity[pos] = qty;
+				TPTData.selected[pos] = 1;
+				custom.dismiss();
+			}
+		});
 		Button canbtn = (Button) custom.findViewById(R.id.cancel_button);
 		canbtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -101,7 +115,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				custom.dismiss();
 			}
-		});/**/
+		});
 		custom.show();
 	}
 

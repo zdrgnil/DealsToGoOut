@@ -22,32 +22,28 @@
                     android:id="@+id/txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/cPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-            </TableRow>
-
-            <TableRow>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/oPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow>
 
                 <TextView
-                    android:id="@+id/store_location"
+                    android:id="@+id/cPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/pTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white" />
             </TableRow>
         </TableLayout>
     </TableRow>

@@ -36,7 +36,7 @@
 
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="37dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/edit_message"
@@ -45,12 +45,21 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="37dp"
         android:layout_below="@+id/edit_message"
         android:layout_toRightOf="@+id/spinner1"
         android:entries="@array/asodc"
         android:prompt="@string/sort_in" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="100dp"
+        android:layout_height="37dp"
+        android:layout_below="@+id/edit_message"
+        android:layout_toRightOf="@+id/spinner2"
+        android:entries="@array/display_categories"
+        android:prompt="@string/display_category" />
 
     <ListView
         android:id="@+id/sale_list"

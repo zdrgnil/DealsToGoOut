@@ -26,15 +26,48 @@ public class MyCart extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_cart);
 		onCreateListView();
+
+		String total = TPTData.getTotal();
+		String sTotal = TPTData.getSaved();
 		TextView textView = (TextView) findViewById(R.id.total_text);
-		textView.setText("Total: 23.95$");
+		textView.setText("Total: " + total + "$");
+		TextView sTotalText = (TextView) findViewById(R.id.stotal_text);
+		sTotalText.setText("Saved: " + sTotal + "$");
+		
 	}
 
+	public static String[] items;
+	public static Integer[] imageId;
+	public static Double[] cPrice;
+	public static Double[] oPrice;
+	public static Integer[] quantity;
+
 	public void onCreateListView() {
+		int num = 0;
+		for (int i = 0; i < TPTData.selected.length; i++) {
+			if (TPTData.selected[i] == 1)
+				num++;
+		}
+		items = new String[num];
+		imageId = new Integer[num];
+		cPrice = new Double[num];
+		oPrice = new Double[num];
+		quantity = new Integer[num];
+		int c = 0;
+		for (int i = 0; i < TPTData.selected.length; i++) {
+			if (TPTData.selected[i] == 1) {
+				items[c] = TPTData.items[i];
+				imageId[c] = TPTData.imageId[i];
+				cPrice[c] = TPTData.cPrice[i];
+				oPrice[c] = TPTData.oPrice[i];
+				quantity[c] = TPTData.quantity[i];
+				c++;
+			}
+		}
+
 		ListView list;
-		CustomList adapter = new CustomList(MyCart.this, TPTData.items,
-				TPTData.imageId, TPTData.cPrice, TPTData.oPrice,
-				TPTData.location);
+		CustomShoppingList adapter = new CustomShoppingList(MyCart.this, items,
+				imageId, cPrice, oPrice, TPTData.location, quantity);
 		list = (ListView) findViewById(R.id.sale_list);
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,24 +82,24 @@ public class MyCart extends Activity {
 	}
 
 	public void createDialog(int position) {
+		final int pos = position;
 		final Dialog custom = new Dialog(MyCart.this);
 		custom.setContentView(R.layout.dialog);
-		custom.setTitle("Product Detail: " + TPTData.items[+position]);
+		custom.setTitle("Product Detail: " + items[+position]);
 
 		ImageView itemImageField = (ImageView) custom
 				.findViewById(R.id.item_img);
-		itemImageField.setImageResource(TPTData.imageId[position]);
+		itemImageField.setImageResource(imageId[position]);
 
 		TextView itemNameField = (TextView) custom.findViewById(R.id.item_name);
-		itemNameField.setText("Name: " + TPTData.items[position]);
+		itemNameField.setText("Name: " + items[position]);
 
 		TextView itemPriceField = (TextView) custom
 				.findViewById(R.id.item_price);
-		itemPriceField.setText("Current: " + TPTData.cPrice[position]
-				+ "$      Was:" + TPTData.oPrice[position] + "$");
+		itemPriceField.setText("Current: " + cPrice[position] + "$      Was:"
+				+ oPrice[position] + "$");
 
-		double saved = Math
-				.round(1000 * (TPTData.oPrice[position] - TPTData.cPrice[position])) / 1000;
+		double saved = Math.round(1000 * (oPrice[position] - cPrice[position])) / 1000;
 		TextView itemSaveField = (TextView) custom.findViewById(R.id.item_save);
 		itemSaveField.setText("Save: " + saved + "$");
 
@@ -98,6 +131,15 @@ public class MyCart extends Activity {
 		Button deletebtn = (Button) custom
 				.findViewById(R.id.add_to_cart_button);
 		deletebtn.setText("Remove From List");
+		deletebtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				int id = TPTData.findID(items[pos]);
+				TPTData.selected[id] = 0;
+				custom.dismiss();
+			}
+		});
+
 		Button canbtn = (Button) custom.findViewById(R.id.cancel_button);
 		canbtn.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -105,7 +147,7 @@ public class MyCart extends Activity {
 				// TODO Auto-generated method stub
 				custom.dismiss();
 			}
-		});/**/
+		});
 		custom.show();
 	}
 

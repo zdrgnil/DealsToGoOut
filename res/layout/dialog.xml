@@ -27,7 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/item_img"
-        android:text="@string/random_text" />
+        android:text="@string/random_text"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/item_price"
@@ -35,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/item_name"
         android:layout_toRightOf="@+id/item_img"
-        android:text="@string/random_text" />
+        android:text="@string/random_text"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/item_save"
@@ -43,7 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/item_price"
         android:layout_toRightOf="@+id/item_img"
-        android:text="@string/random_text" />
+        android:text="@string/random_text"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/sale_ends"
@@ -51,7 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/item_save"
         android:layout_toRightOf="@+id/item_img"
-        android:text="@string/random_text" />
+        android:text="@string/random_text"
+        android:textColor="@color/white" />
 
     <View
         android:id="@+id/sep_line"
@@ -65,13 +69,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sep_line"
-        android:text="@string/detail_text" />
+        android:text="@string/detail_text"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/manufacture_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_text"
+                android:textColor="@color/white"
         android:text="@string/random_text" />
 
     <TextView
@@ -79,6 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/manufacture_text"
+                android:textColor="@color/white"
         android:text="@string/random_text" />
 
     <TextView
@@ -86,6 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_text"
+                android:textColor="@color/white"
         android:text="@string/random_text" />
 
     <TextView
@@ -93,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/brand_text"
+                android:textColor="@color/white"
         android:text="@string/random_text" />
 
     <TextView
@@ -100,6 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sold_at_text"
+                android:textColor="@color/white"
         android:text="@string/map_text" />
 
     <ImageView
@@ -111,15 +121,14 @@
         android:contentDescription="@string/item_img_desc"
         android:src="@raw/dmap" />
 
-    <!--
-    <Button
-        android:id="@+id/more_button"
+    <EditText
+        android:id="@+id/quantity_ed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/item_location_map"        
-        android:text="@string/more_text" />
-    -->
+        android:layout_below="@+id/item_location_map"
+        android:hint="@string/quantity_hint"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/cancel_button"
