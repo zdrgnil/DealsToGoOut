@@ -2,7 +2,7 @@ package csc318.g6.dealstogoout;
 
 public class TPTData {
 	public static final String[] items = { "Carrot", "Bean", "Cabbage",
-			"Onion", "Spinach", "Tomato", "Apple", "Banana", "Brown Bean",
+			"Onion", "Spinach", "Tomato", "Apple", "Banana", "Carrot",
 			"Pineapple" };
 
 	public static Double[] cPrice = { 0.99, 0.88, 0.77, 0.65, 0.55, 0.45, 0.33,
@@ -14,7 +14,7 @@ public class TPTData {
 			"Food Basics (238 Wellesley)", "Price Chooper (23 Bloor)" };
 	public static Integer[] imageId = { R.raw.carrot, R.raw.greenbean,
 			R.raw.s_cabbage, R.raw.s_onion, R.raw.s_spinach, R.raw.s_tomato,
-			R.raw.s_red_apple, R.raw.s_banana, R.raw.s_swedishbrownbeans,
+			R.raw.s_red_apple, R.raw.s_banana, R.raw.s_carrots,
 			R.raw.s_pineapple };
 	public static Integer[] mapId = { R.raw.yong23, R.raw.wellesley238,
 			R.raw.bloor23 };

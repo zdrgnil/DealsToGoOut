@@ -29,21 +29,38 @@ public class SearchResult extends Activity {
 		setContentView(R.layout.activity_search_result);
 
 		Intent intent = getIntent();
-		int num = 10 + (int) (Math.random() * 70);
+
+		int num = 10;
+
+		String sText = intent.getStringExtra(MainActivity.SEARCH_TEXT);
+		if (sText.equalsIgnoreCase("carrot"))
+			num = 2;
 		String message = "\"" + intent.getStringExtra(MainActivity.SEARCH_TEXT);
 		message += "\" (" + num + " results)";
 
 		TextView searchTextField = (TextView) findViewById(R.id.Search_text);
 		searchTextField.setText(message);
 
-		onCreateListView();
+		onCreateListView(sText);
 	}
 
-	public void onCreateListView() {
+	public static String[] items = { "Carrot", "Carrot" };
+	public static Integer[] imageId = { R.raw.carrot, R.raw.s_carrots };
+	public static Double[] cPrice = { 0.99, 0.19 };
+	public static Double[] oPrice = { 1.99, 1.19 };
+
+	public void onCreateListView(String sText) {
 		ListView list;
-		CustomList adapter = new CustomList(SearchResult.this, TPTData.items,
-				TPTData.imageId, TPTData.cPrice, TPTData.oPrice,
-				TPTData.location);
+		CustomList adapter;
+		if (sText.equalsIgnoreCase("carrot")) {
+			adapter = new CustomList(SearchResult.this, items, imageId, cPrice,
+					oPrice, TPTData.location);
+		} else {
+			adapter = new CustomList(SearchResult.this, TPTData.items,
+					TPTData.imageId, TPTData.cPrice, TPTData.oPrice,
+					TPTData.location);
+		}
+
 		list = (ListView) findViewById(R.id.sale_list);
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
